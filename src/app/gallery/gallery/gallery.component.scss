@@ -1,0 +1,96 @@
+@import "../../../assets/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+.gallery-main {
+    padding: 70px 90px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: $primary-white;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.column{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.add-btn{
+  background-color: $primary-white;
+  border: 1px solid black;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 5px 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.add-btn:hover{
+  color: #1c7a67;
+  border: 1px solid #1c7a67;
+}
+input[type=text] {
+  background-color: $primary-white;
+  color: black;
+  height: 28px;
+  width: 250px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border: 1px solid black;
+}
+input[type=text]:focus {
+  color: $primary-white;
+  background-color: #1abc9c;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 430px;
+  height: 350px;
+  row-gap: 10px;
+}
+.delete-btn{
+  background-color: $primary-white;
+  font-weight: 700;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+}
+.delete-btn:hover{
+  color: #1c7a67;
+}
+.card-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 430px;
+  height: 250px;
+}
+img {
+  width: 430px;
+  height: 250px;
+  cursor: pointer;
+}
+img:hover{
+  filter: opacity(90%);
+}
+.card-title{
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #555;
+}

@@ -1,0 +1,28 @@
+<div class="gallery-main">
+
+    <div class="row">
+
+        <div class="column">
+            <div><button class="add-btn" routerLink="add-picture">ADD PICTURE</button></div>
+            <div><input type="text" name="searchInput" [(ngModel)]="searchText" placeholder="Search"></div>
+        </div>
+
+        <div class="content">
+            <div class="card" *ngFor="let data of dataGallery | searchFilter : searchText">
+                <div class="card-btn">
+                    <button class="delete-btn" (click)="deleteData = data">X</button>
+                </div>
+                <div class="card-img">
+                    <img [src]="data?.fileReader" (click)="showModal = data">
+                </div>
+                <div class="card-title">
+                    {{data?.title}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-modal *ngIf="showModal" [img]="showModal" (close)="closeImg()"></app-modal>
+<app-confirm-dialog *ngIf="deleteData" [id]="deleteData.id" 
+(confirm)="onConfirm($event, deleteData.imgName, deleteData.id)"></app-confirm-dialog>

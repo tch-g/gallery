@@ -1,0 +1,8 @@
+<!-- Modal -->
+<div id="popup" *ngIf="img !== null">
+    <div class="popup-content cont-flex">
+        <button (click)="closeImg()">X</button>
+        <img [src]="img.fileReader" alt="">
+        <h1>{{img.title}}</h1>
+    </div>
+</div>

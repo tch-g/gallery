@@ -1,0 +1,44 @@
+@import "../../../assets/colors.scss";
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+
+.navbar {
+    background-color: #1abc9c;
+    padding: 70px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.nav-right {
+    color: white;
+}
+
+.nav-right ul li {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+a {
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #222222;
+}
+
+.nav-left {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.is-active {
+    color: #222222;
+}

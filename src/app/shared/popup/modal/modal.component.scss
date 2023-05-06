@@ -1,0 +1,68 @@
+@import "../../../../assets/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+#popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#popup .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1100px;
+    max-height: 700px;
+    padding: 15px;
+    background: rgb(55, 47, 73);
+}
+
+.popup-content {
+    display: flex;
+    row-gap: 20px;
+}
+
+#popup a.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#popup:target {
+    display: block;
+}
+
+
+.cont-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    max-height: 600px;
+    max-width: 1100px;
+}
+
+button{
+    background-color: transparent;
+    color: $primary-white;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: larger;
+    font-weight: 700;
+    border-radius: 3px;
+  }
+
+  button:hover{
+    color: $primary;
+  }

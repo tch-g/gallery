@@ -1,0 +1,72 @@
+@import "../../../assets/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+.add-picture-main{
+    margin: 50px 100px 0 100px;
+    background-color: $primary-white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: $primary-text;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+label {
+    display: inline-block;
+    width: 150px;
+    margin: 0 20px 0 0;
+    text-align: right;
+}
+
+input {
+    display: inline-block;
+    height: 50px;
+    border-radius: 0;
+    color: $primary-text;
+    border-color: $primary;
+    font-size: 1.4rem;
+}
+.form-value{
+    margin: 20px 20px;
+}
+
+input::file-selector-button {
+    font-weight: bold;
+    color: $primary-white;
+    padding: 0.5em;
+    border: thin solid $primary;
+    background-color: $primary;
+    border-radius: 3px;
+}
+
+.btn-cancel,.btn-add{
+    background-color: $primary;
+    color: $primary-white;
+    padding: 14px 20px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    border-radius: 3px;
+}
+.btn-layout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-invalid{
+    background-color: rgb(58, 71, 41);
+    color: $primary-white;
+    padding: 14px 20px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    border-radius: 3px;
+}
+
+

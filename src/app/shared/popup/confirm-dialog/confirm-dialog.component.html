@@ -1,0 +1,9 @@
+<div id="popup" *ngIf="id !== null">
+    <div class="popup-content cont-flex">
+        <h1>Are you sure?</h1>
+        <div class="modal-footer">
+            <button type="button" class="btn" (click)="disagree()">Cancel</button>
+            <button type="button" class="btn" (click)="agree()">Yes, continue</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="add-picture-main">
+
+    <form #f="ngForm" (ngSubmit)="addPicture(f)">
+        <div class="form-value" >
+            <label for="title"> Title</label>
+            <input  [(ngModel)]="addPictureValue.title" type="text" name="title" required/>
+        </div>
+        <div class="form-value">
+            <label for="picture">Picture</label>
+            <input  type="file" name="picture" 
+            [(ngModel)]="addPictureValue.file" (change)="onChange($event)" required/>
+        </div>
+        <div class="btn-layout">
+            <button type="submit" class="btn-cancel" routerLink="/gallery">Cancel</button>
+            <button [disabled]="f.invalid" type="submit" [class.btn-invalid]="!f.valid" class="btn-add" >Add</button>
+        </div>
+    </form>
+
+</div>
