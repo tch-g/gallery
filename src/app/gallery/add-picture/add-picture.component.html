@@ -11,7 +11,7 @@
             [(ngModel)]="addPictureValue.file" (change)="onChange($event)" required/>
         </div>
         <div class="btn-layout">
-            <button type="submit" class="btn-cancel" routerLink="/gallery">Cancel</button>
+            <button type="button" class="btn-cancel" routerLink="/gallery">Cancel</button>
             <button [disabled]="f.invalid" type="submit" [class.btn-invalid]="!f.valid" class="btn-add" >Add</button>
         </div>
     </form>
