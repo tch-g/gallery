@@ -21,7 +21,7 @@ export class AddPictureComponent implements OnInit {
   imgName!: string;
   gallery!: Observable<IPicture[]>;
   arrayId: string[] = [];
-
+  file: any;
 
   constructor(
     private storage: AngularFireStorage,
@@ -36,28 +36,17 @@ export class AddPictureComponent implements OnInit {
     this.gallery.subscribe(res => {
       res.map(x => this.arrayId.push(x.id));
     });
-
   }
 
 
-
-  async onChange(event: any) {
-    this.loadingService.start();
-    let file = event.target.files[0];
-    let toNumber = this.arrayId.map(x => Number(x));
-    let numbId = uniqueId(toNumber);
-    let path = `img/${file.name}+${numbId}`;
-    this.imgName = `${file.name}+${numbId}`;
-    let upload = this.storage.upload(path, file);
-    let url = (await upload).ref.getDownloadURL().then(res => {
-      this.imgUrl = JSON.parse(JSON.stringify(res));
-    }).finally(() => this.loadingService.stop());
+  onChange(event: any) {
+    this.file = event.target.files[0];
   }
 
 
-
-
-  addPicture(f: NgForm) {
+  async addPicture(f: NgForm) {
+    let file = this.file;
+    this.imgUrl = await this.downloadImage(file);
     this.addPictureValue.fileReader = this.imgUrl;
     let toNumber = this.arrayId.map(x => Number(x));
     let numbId = uniqueId(toNumber);
@@ -74,6 +63,19 @@ export class AddPictureComponent implements OnInit {
     this.router.navigate(['gallery']);
   }
 
+
+  async downloadImage(file: any) {
+    this.loadingService.start();
+    let toNumber = this.arrayId.map(x => Number(x));
+    let numbId = uniqueId(toNumber);
+    let path = `img/${file.name}+${numbId}`;
+    this.imgName = `${file.name}+${numbId}`;
+    const ref = this.storage.ref(path);
+    const task = await ref.put(file);
+    return await task.ref.getDownloadURL().finally(() => {
+      this.loadingService.stop();
+    });
+  }
 
 
 }
